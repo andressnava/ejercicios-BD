@@ -1,0 +1,5 @@
+INSERT INTO tiendas (id_tie, sector_tie) VALUES (1, 'A')
+INSERT INTO tiendas (id_tie, sector_tie) VALUES (2, 'B')
+INSERT INTO tiendas (id_tie, sector_tie) VALUES (3, 'C')
+INSERT INTO tiendas (id_tie, sector_tie) VALUES (4, 'D')
+INSERT INTO tiendas (id_tie, sector_tie) VALUES (5, 'E')

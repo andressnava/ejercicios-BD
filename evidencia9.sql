@@ -1,0 +1,1 @@
+UPDATE campistas SET estado_cam = 'Ciudad de México' WHERE estado_cam = 'Distrito Federal'
