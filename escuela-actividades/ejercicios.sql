@@ -37,4 +37,27 @@ SELECT a.prof_rfc as 'RFC', rtrim(prof_nombre) + ' ' +  rtrim(prof_ap_p) + ' ' +
 		select distinct(prof_rfc) from modulos
 
 
+/* 6. Generar una consulta por alumno donde se especifique el número de materias que esta cursando cada alumno*/
 
+SELECT cursos.alu_bol, alumnos.alu_nombre, alu_ap_p, alu_ap_m, count(*) as 'Número de Materias'
+		FROM cursos INNER JOIN alumnos ON cursos.alu_bol = alumnos.alu_bol
+		GROUP BY cursos.alu_bol, alumnos.alu_nombre, alu_ap_p, alu_ap_m
+
+
+/* 7. Genera una consulta donde se especifique el numero de materias que tiene cada unas de las carreras por semestre*/
+
+SELECT a.carr_cod, carr_nombre, mod_semestre, count(*) as 'Número de materias' 
+		FROM modulos as a INNER JOIN carreras as b ON a.carr_cod = b.carr_cod
+		GROUP BY a.carr_cod, carr_nombre, mod_semestre  
+		ORDER BY carr_nombre, mod_semestre
+
+/* 8. Genere una consulta por cada materia de la carrera de Arquitectura donde se despliegue los alumnos que la estan
+		cursando*/
+
+SELECT carr_nombre, a.mod_cod, mod_nombre, b.alu_bol, alu_nombre, alu_ap_p, alu_ap_m
+		FROM modulos as a 
+		INNER JOIN cursos as b ON a.mod_cod = b.mod_cod
+		INNER JOIN carreras as c ON c.carr_cod = a.carr_cod
+		INNER JOIN alumnos as d ON b.alu_bol = d.alu_bol
+		WHERE a.carr_cod = 'A'
+		ORDER BY mod_nombre
