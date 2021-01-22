@@ -6,7 +6,7 @@
 
 /* Realice una consulta donde se indique por cada grupo la lista de actividades que ha realizado en el
     campamento, Mostrando la siguiente información: Grupo, Subgrupo, Color, Categoria del subgrupo, Nombre de la actividad,
-    Nivel de la actividad, puntuacion obtenida, monitor y campista responsable*/
+    Nivel de la actividad, puntuacion obtenida, monitor y campista responsable de la actividad*/
 
 SELECT a.id_gru AS 'Grupo', a.id_sub AS 'Subgrupo', color_gru AS 'Color', categoria_sub AS 'Categoria subgrupo', a.nombre_act AS 'Nombre actividad',
 		nivel_act AS 'Nivel actividad', puntuacion AS 'Puntuación', rtrim(nombre_mon) + ' ' + rtrim(apellidos_mon) AS 'Monitor', rtrim(nombre_cam) + ' ' + rtrim(apellidos_cam) AS 'Campista responsable'

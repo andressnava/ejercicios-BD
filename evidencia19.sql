@@ -13,5 +13,7 @@ CREATE VIEW VISTA_CAM
 AS SELECT id_cam, rtrim(nombre_cam) + ' ' + rtrim(apellidos_cam), edad_cam, id_gru, id_sub
 	FROM campistas
 	WHERE edad_cam BETWEEN 8 AND 12
+
+
 /* Mostrando la vista*/
 SELECT * FROM VISTA_CAM

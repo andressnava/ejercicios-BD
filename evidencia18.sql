@@ -6,7 +6,7 @@
 
 /*Realice una consulta donde se despliegue en orden alfabético los nombres de todas las personas en el Campamento (Campistas y Monitores) */
 
-SELECT rtrim(nombre_cam) + ' ' + rtrim(apellidos_cam) AS 'Nombre completo' FROM campistas
+SELECT rtrim(nombre_cam) + ' ' + rtrim(apellidos_cam) AS Nombre_completo_personas FROM campistas
 UNION ALL
 SELECT rtrim(nombre_mon) + ' ' + rtrim(apellidos_mon) FROM monitores
-ORDER BY 'Nombre completo'
+ORDER BY Nombre_completo_personas
